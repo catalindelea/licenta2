@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="ro.ase.csie.licenta.entity.Pontaj" table="PONTAJ">
+		<id name="id_pontaj" type="long">
+			<column name="ID_PONTAJ" />
+			<generator class="identity"></generator>
+		</id>
+		
+		<property name="id_angajat" column="ID_ANGAJAT" type="long" />
+		<property name="data_io" column="DATA_IO" type="java.util.Date" />
+	</class>
+</hibernate-mapping>
