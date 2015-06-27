@@ -18,4 +18,5 @@ public class ConsolaChain {
             input.accepta(comandaData);
         }
     }
+    
 }
