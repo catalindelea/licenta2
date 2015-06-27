@@ -9,7 +9,7 @@ public class ReadWrongInput implements Input{
 				comandaData.equalsIgnoreCase("sincronizeaza")) {
 			return true;
 		} else 
-		System.out.println("Alegeti intre: 'asculta', 'salveaza' si 'sincronizeaza'");
+		System.out.println("Alegeti intre: '-l', '-s' ,'-y' sau -a");
         return true;
 	}
 

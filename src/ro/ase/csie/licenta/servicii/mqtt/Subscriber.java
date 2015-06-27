@@ -3,11 +3,17 @@ package ro.ase.csie.licenta.servicii.mqtt;
 import static ro.ase.csie.licenta.util.ConstantParams.BROKER;
 import static ro.ase.csie.licenta.util.ConstantParams.TOPIC;
 
+import java.util.Date;
+
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
+
+import ro.ase.csie.licenta.entity.Pontaj;
+import ro.ase.csie.licenta.servicii.db.SalveazaMemorieDB;
+import ro.ase.csie.licenta.util.IDValidator;
 
 public class Subscriber implements MqttCallback {
 	
@@ -35,7 +41,11 @@ public class Subscriber implements MqttCallback {
 
 	@Override
 	public void messageArrived(String topic, MqttMessage mesaj) throws Exception {
-		System.out.println(mesaj);
+		Long id = IDValidator.parsedValidation(mesaj.toString());
+		if (id!=null) {
+			Pontaj pontaj = new Pontaj (id, new Date());
+			SalveazaMemorieDB.salveazaLive(pontaj);
+		}
 	}
 
 	@Override

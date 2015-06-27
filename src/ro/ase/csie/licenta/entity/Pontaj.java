@@ -29,6 +29,11 @@ public class Pontaj {
 		this.data_io=data_io;
 	}
 	
+	public Pontaj(Long id_angajat, Date data_io) {
+		this.id_angajat=id_angajat;
+		this.data_io=data_io;
+	}
+
 	public long getId_pontaj() {
 		return id_pontaj;
 	}

@@ -1,7 +1,7 @@
 package ro.ase.csie.licenta.util;
 
 public class IDValidator {
-	public static Long isValid(String output) {
+	public static Long parsedValidation(String output) {
 		boolean result=true;
 		if (output.length()!=8) result = false;
 		try {
