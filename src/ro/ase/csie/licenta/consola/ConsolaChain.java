@@ -6,6 +6,7 @@ import ro.ase.csie.licenta.servicii.mqtt.AscultaMQTT;
 
 
 public class ConsolaChain {
+	
     private static Input[] inputChain = new Input[]{
     	new AscultaMQTT(),
     	new SalveazaMemorieDB(), 
