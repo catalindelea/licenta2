@@ -1798,3 +1798,16 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 2015-06-28 02:50:44 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
 2015-06-28 02:50:44 INFO  PojoInstantiator:85 - HHH000182: No default (no-argument) constructor for class: ro.ase.csie.licenta.entity.Pontaj (class must be instantiated by Interceptor)
 2015-06-28 02:50:45 INFO  HibernateTransactionManager:256 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@2fd1cdf7] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-28 02:57:37 INFO  ClassPathXmlApplicationContext:510 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@175093f1: startup date [Sun Jun 28 02:57:37 EEST 2015]; root of context hierarchy
+2015-06-28 02:57:37 INFO  XmlBeanDefinitionReader:315 - Loading XML bean definitions from class path resource [spring.xml]
+2015-06-28 02:57:37 INFO  DefaultListableBeanFactory:577 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@178aab40: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,pontajDAO,pontajService,dataSource,sessionFactory,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2015-06-28 02:57:37 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-06-28 02:57:37 INFO  Version:41 - HHH000412: Hibernate Core {4.1.9.Final}
+2015-06-28 02:57:37 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-06-28 02:57:37 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2015-06-28 02:57:38 INFO  Dialect:123 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-06-28 02:57:38 INFO  LobCreatorBuilder:120 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-06-28 02:57:38 INFO  TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-28 02:57:38 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-28 02:57:38 INFO  PojoInstantiator:85 - HHH000182: No default (no-argument) constructor for class: ro.ase.csie.licenta.entity.Pontaj (class must be instantiated by Interceptor)
+2015-06-28 02:57:38 INFO  HibernateTransactionManager:256 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@68c0890f] of Hibernate SessionFactory for HibernateTransactionManager

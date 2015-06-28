@@ -5,6 +5,7 @@ import static ro.ase.csie.licenta.util.ConstantParams.TOPIC;
 
 import java.util.Date;
 
+import org.apache.log4j.Logger;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
@@ -17,6 +18,8 @@ import ro.ase.csie.licenta.util.IDValidator;
 
 public class Subscriber implements MqttCallback {
 	
+	private static Logger logger = Logger.getLogger(Subscriber.class);
+	
 	MqttClient client;
 	
 	public void listen() {
@@ -27,7 +30,7 @@ public class Subscriber implements MqttCallback {
 			client.subscribe(TOPIC);
 			System.out.println("Client conectat si asculta pentru " + TOPIC);
 		} catch (MqttException e) {
-			e.printStackTrace();
+			logger.error(e);
 		}
 	}
 
@@ -36,6 +39,7 @@ public class Subscriber implements MqttCallback {
 			client.disconnect();
 			System.out.println("Clientul nu mai asculta");
 		} catch (MqttException e) {
+			logger.error(e);
 		}
 	}
 
@@ -49,8 +53,8 @@ public class Subscriber implements MqttCallback {
 	}
 
 	@Override
-	public void connectionLost(Throwable error) {
-		error.printStackTrace();
+	public void connectionLost(Throwable e) {
+		logger.error(e);
 	}
 
 	@Override
