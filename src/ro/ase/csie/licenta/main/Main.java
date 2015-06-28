@@ -6,7 +6,7 @@ public class Main {
 
 	
 	public static void main(String[] args) {
-          ConsolaChain.process(args[0]);
+          ConsolaChain.process();
 	}
 
 }

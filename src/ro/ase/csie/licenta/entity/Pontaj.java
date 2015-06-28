@@ -23,6 +23,10 @@ public class Pontaj {
 	@Column(name = "DATA_IO")
 	private Date data_io;
 	
+	
+	public Pontaj(){
+		
+	}
 	public Pontaj(long id_pontaj, Long id_angajat, Date data_io){
 		this.id_pontaj=id_pontaj;
 		this.id_angajat=id_angajat;

@@ -10,7 +10,7 @@ import ro.ase.csie.licenta.entity.Pontaj;
 
 @Service
 @Transactional
-public class PontajService {
+public class PontajService{
     
 	@Autowired
     private PontajDAO pontajDAO;

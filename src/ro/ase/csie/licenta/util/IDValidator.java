@@ -14,6 +14,7 @@ public class IDValidator {
 		} catch (Exception e) {
 			result = false;
 			logger.error(e);
+			e.printStackTrace();
 		}
 		if (result) return Long.parseLong(output); 
 		else return null;
