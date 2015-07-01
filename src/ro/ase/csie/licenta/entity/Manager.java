@@ -23,6 +23,8 @@ public class Manager {
 	private Long salariu;
 	@Column(name = "DEPARTAMENT")
 	private String departament;
+	@Column(name = "EMAIL")
+	private String email;
 	
 	
 	public Manager(){
@@ -34,6 +36,7 @@ public class Manager {
 		this.nume=componente[2];
 		this.salariu=Long.parseLong(componente[3]);
 		this.departament=componente[4];
+		this.email=componente[5];
 	}
 
 	public Long getId_angajat() {
@@ -66,6 +69,12 @@ public class Manager {
 
 	public void setDepartament(String departament) {
 		this.departament = departament;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }
