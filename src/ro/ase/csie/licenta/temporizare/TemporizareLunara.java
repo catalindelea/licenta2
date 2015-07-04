@@ -34,7 +34,7 @@ public class TemporizareLunara extends TimerTask {
 	}
 
 	public void verificaLunaTrecutaAngajati() {
-		RaportAngajat.verificaLunaTrecutaAngajati();
+		RaportAngajat.trimiteRaportLunar(RaportAngajat.verificaLunaTrecutaAngajati());
 	}
 
 }

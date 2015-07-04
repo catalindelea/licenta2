@@ -66,10 +66,10 @@ public class PontajDAO {
 		Date inceputulLunii = UtilZile.startOfLastMonth(data);
 		Date sfarsitulLunii = UtilZile.endOfLastMonth(data);
 		try {
-			Query query = sessionFactory.getCurrentSession().createQuery("FROM Pontaj where id_angajat= :id_angajat and data_io BETWEEN :data_m and :data_M");
+			Query query = sessionFactory.getCurrentSession().createQuery("FROM Pontaj where id_angajat= :id_angajat and data_io BETWEEN :data_inceput and :data_sfarsit");
 			query.setParameter("id_angajat", id_angajat);
-			query.setDate("data_m", inceputulLunii);
-			query.setDate("data_M", sfarsitulLunii);
+			query.setDate("data_inceput", inceputulLunii);
+			query.setDate("data_sfarsit", sfarsitulLunii);
 			lista = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();

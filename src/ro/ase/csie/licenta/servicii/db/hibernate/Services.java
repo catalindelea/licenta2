@@ -17,7 +17,7 @@ public class Services {
 	
 	public static AngajatService getAngajatService(){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
-		AngajatService angajatService = (AngajatService) ctx.getBean("angajatjService");
+		AngajatService angajatService = (AngajatService) ctx.getBean("angajatService");
 		return angajatService;
 	}
 	

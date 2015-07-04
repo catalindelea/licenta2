@@ -15,7 +15,6 @@ public class UtilZile {
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.HOUR, 0);
-        System.out.println(calendar.getTime());
         return calendar.getTime();
 	}
 	
@@ -27,7 +26,6 @@ public class UtilZile {
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.HOUR, 0);
-        System.out.println(calendar.getTime());
         return calendar.getTime();
 	}
 	
@@ -51,7 +49,6 @@ public class UtilZile {
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.HOUR, 0);
-        System.out.println(calendar.getTime());
         return calendar.getTime();
 	}
 	
@@ -64,7 +61,6 @@ public class UtilZile {
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.HOUR, 0);
-        System.out.println(calendar.getTime());
         return calendar.getTime();
 	}
 }

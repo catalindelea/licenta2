@@ -35,5 +35,7 @@ public class AngajatService{
     	angajatDAO.delete(angajat);
     }
    
-    
+    public String getEmailAddressForManager(Long id_angajat) {
+    	return angajatDAO.getEmailAddressForManager(id_angajat);
+    }
 }
