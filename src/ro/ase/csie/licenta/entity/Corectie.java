@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.apache.log4j.Logger;
+
 
 
 @Entity
@@ -26,6 +28,8 @@ public class Corectie {
 	private Date data_io;
 	@Column(name = "STARE")
 	private boolean stare;
+	@Column(name = "TIP")
+	private int tip;
 
 	public Corectie(){
 		
@@ -34,9 +38,14 @@ public class Corectie {
 	public Corectie(String mesaj) throws ParseException {
 		String[] componente = mesaj.split("#");
 		this.id_angajat=Long.parseLong(componente[1]);
-		SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy HH:mm:ss");
-		this.data_io = sdf.parse(componente[2]);
-		this.stare=Boolean.valueOf(componente[3]);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyyHH:mm");
+        try {
+        	this.data_io = sdf.parse(componente[2]);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+		this.tip=Integer.parseInt(componente[3]);
+		this.stare=false;
 	}
 
 	public Long getId_corectie() {

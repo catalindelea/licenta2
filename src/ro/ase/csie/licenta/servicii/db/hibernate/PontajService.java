@@ -1,5 +1,6 @@
 package ro.ase.csie.licenta.servicii.db.hibernate;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,8 @@ public class PontajService{
     	pontajDAO.delete(pontaj);
     }
    
+    public List<Pontaj> selectOnDateForAngajat(Date data, long id_angajat){
+    	return pontajDAO.selectOnDateForAngajat(data, id_angajat);
+    }
     
 }

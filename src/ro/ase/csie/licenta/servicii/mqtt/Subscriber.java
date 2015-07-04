@@ -33,7 +33,6 @@ public class Subscriber implements MqttCallback {
 			System.out.println("Client conectat si asculta pentru " + TOPIC_R+" "+TOPIC_A+" "+TOPIC_M+" "+TOPIC_C);
 		} catch (MqttException e) {
 			logger.error(e);
-			e.printStackTrace();
 		}
 	}
 
@@ -43,7 +42,6 @@ public class Subscriber implements MqttCallback {
 			System.out.println("Clientul nu mai asculta");
 		} catch (MqttException e) {
 			logger.error(e);
-			e.printStackTrace();
 		}
 	}
 
@@ -55,7 +53,6 @@ public class Subscriber implements MqttCallback {
 	@Override
 	public void connectionLost(Throwable e) {
 		logger.error(e);
-		e.printStackTrace();
 	}
 
 	@Override

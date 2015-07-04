@@ -1,13 +1,17 @@
 package ro.ase.csie.licenta.servicii.db.hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import ro.ase.csie.licenta.entity.Angajat;
 import ro.ase.csie.licenta.entity.Corectie;
 
 @Repository
@@ -38,6 +42,19 @@ public class CorectieDAO{
 
     public void delete(Corectie obj) {
     	sessionFactory.getCurrentSession().delete(obj);
+    }
+    
+    @SuppressWarnings("unchecked")
+	public List<Corectie> selectByAngajatId(Long id) {
+    	List<Corectie> lista = new ArrayList<Corectie>();
+    	try {
+    	Query query = sessionFactory.getCurrentSession().createQuery("from PONTAJ where ID_ANGAJAT= :id_angajat");
+    	query.setParameter("id_angajat", id);
+    	lista = query.list();
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	return lista;
     }
 
 }
