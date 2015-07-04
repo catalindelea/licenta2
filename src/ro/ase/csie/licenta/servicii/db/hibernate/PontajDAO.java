@@ -45,7 +45,7 @@ public class PontajDAO {
 		sessionFactory.getCurrentSession().delete(obj);
 	}
 
-	public List<Pontaj> selectOnDateForAngajat(Date data, long id_angajat) {
+	public List<Pontaj> selectIeriForAngajat(Date data, long id_angajat) {
 		List<Pontaj> lista = new ArrayList<Pontaj>();
 		Date midnight = UtilZile.midnight(data);
 		Date tMidnight = UtilZile.tMidnight(data);
@@ -54,6 +54,22 @@ public class PontajDAO {
 			query.setParameter("id_angajat", id_angajat);
 			query.setDate("data_m", midnight);
 			query.setDate("data_M", tMidnight);
+			lista = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return lista;
+	}
+	
+	public List<Pontaj> selectOnMonthForAngajat(Date data, long id_angajat) {
+		List<Pontaj> lista = new ArrayList<Pontaj>();
+		Date inceputulLunii = UtilZile.startOfLastMonth(data);
+		Date sfarsitulLunii = UtilZile.endOfLastMonth(data);
+		try {
+			Query query = sessionFactory.getCurrentSession().createQuery("FROM Pontaj where id_angajat= :id_angajat and data_io BETWEEN :data_m and :data_M");
+			query.setParameter("id_angajat", id_angajat);
+			query.setDate("data_m", inceputulLunii);
+			query.setDate("data_M", sfarsitulLunii);
 			lista = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();

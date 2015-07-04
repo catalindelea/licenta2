@@ -24,7 +24,9 @@ public class Subscriber implements MqttCallback {
 	public void listen() {
 		try {
 			listener = new MqttClient(BROKER, "AbonatServer");
+			System.out.println("Se conecteaza la server...");
 			listener.connect();
+			System.out.println("Conectat");
 			listener.setCallback(this);
 			listener.subscribe(TOPIC_R);
 			listener.subscribe(TOPIC_A);

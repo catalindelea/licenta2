@@ -41,4 +41,30 @@ public class UtilZile {
 		Hm.append("."+percentageMinutes);
 		return Float.parseFloat(Hm.toString());
 	}
+	
+	public static Date startOfLastMonth(Date data){
+		Calendar calendar = Calendar.getInstance();
+        calendar.setTime(data);
+        calendar.add(Calendar.MONTH, -1);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        calendar.set(Calendar.MILLISECOND, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.HOUR, 0);
+        System.out.println(calendar.getTime());
+        return calendar.getTime();
+	}
+	
+	public static Date endOfLastMonth(Date data){
+		Calendar calendar = Calendar.getInstance();
+        calendar.setTime(data);
+        calendar.add(Calendar.MONTH, -1);
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+        calendar.set(Calendar.MILLISECOND, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.HOUR, 0);
+        System.out.println(calendar.getTime());
+        return calendar.getTime();
+	}
 }

@@ -37,7 +37,11 @@ public class PontajService{
     }
    
     public List<Pontaj> selectOnDateForAngajat(Date data, long id_angajat){
-    	return pontajDAO.selectOnDateForAngajat(data, id_angajat);
+    	return pontajDAO.selectIeriForAngajat(data, id_angajat);
+    }
+    
+    public List<Pontaj> selectOnMonthForAngajat(Date data, long id_angajat) {
+    	return pontajDAO.selectOnMonthForAngajat(data, id_angajat);
     }
     
 }
