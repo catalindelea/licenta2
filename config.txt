@@ -1,0 +1,4 @@
+#IP-ul brokerului MQTT
+ip 192.168.0.1
+#Portul pe care asculta brokerul
+port 1883
